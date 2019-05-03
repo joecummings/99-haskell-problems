@@ -1,5 +1,9 @@
 -- Reverse a list
 
 myReverse :: [a] -> [a]
-myReverse (x:xs) = map singleReverse xs ++ x
 myReverse [] = []
+myReverse x = myReverseHelper x []
+
+myReverseHelper :: [a] -> [a] -> [a]
+myReverseHelper [] [] = [] 
+myReverseHelper (x:xs) y = myReverseHelper xs y ++ [x] 
